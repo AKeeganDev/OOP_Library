@@ -1,4 +1,10 @@
-class Person
+class Nameable
+  def correct_name
+    raise NotImplementedError
+  end
+end
+
+class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..100)
     @age = age
@@ -10,8 +16,11 @@ class Person
 
   def can_use_services
     return true if is_of_age? || @parent_permission
-
     false
+  end
+
+  def correct_name
+    @name
   end
 
   private
