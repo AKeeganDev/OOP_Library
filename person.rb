@@ -1,8 +1,4 @@
-class Nameable
-  def correct_name
-    raise NotImplementedError
-  end
-end
+require_relative 'nameable'
 
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
