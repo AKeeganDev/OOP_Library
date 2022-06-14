@@ -2,6 +2,7 @@ require_relative 'person'
 
 class BaseDecorator < Nameable
   def initialize(nameable)
+    super()
     @nameable = nameable
   end
 

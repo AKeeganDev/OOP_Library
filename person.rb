@@ -6,6 +6,7 @@ end
 
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..100)
     @age = age
     @name = name
@@ -16,6 +17,7 @@ class Person < Nameable
 
   def can_use_services
     return true if is_of_age? || @parent_permission
+
     false
   end
 
