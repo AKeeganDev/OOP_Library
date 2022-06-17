@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require_relative 'app'
 
+# main app
 class Main
   def display_menu
     puts "\n"
