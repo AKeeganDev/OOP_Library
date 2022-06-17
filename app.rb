@@ -3,6 +3,8 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'classroom'
 require_relative 'app_helper'
+require_relative 'rental'
+require 'set'
 
 class App
   include AppHelper
@@ -58,6 +60,10 @@ class App
   def create_rental
     if @people.empty?
       puts 'We need a person to rent to! Please add a person before setting up a rental'
+      return ''
+    end
+    if @books.empty?
+      puts 'We need a book to rent out! Please add a book before setting up a rental'
       return ''
     end
     person_selection_idx = make_person_selection

@@ -15,7 +15,6 @@ module AppHelper
       if check
         return 'Student' if class_input == 2
 
-        puts 'not student'
         return 'Teacher' if class_input == 1
 
         class_answered = true
@@ -82,9 +81,9 @@ module AppHelper
       puts 'Please select the person by selection number (number on the left of the name)'
       @people.each_with_index do |person, idx|
         puts "Selection #{idx}- Name: #{person.name} ID: #{person.id}"
-        selection = gets.chomp.to_i
-        return selection if selection.between?(0, max)
       end
+      selection = gets.chomp.to_i
+      return selection if selection.between?(0, max)
     end
   end
 
@@ -109,8 +108,8 @@ module AppHelper
     puts "There are #{@rentals.length} current rentals of books on record"
     until answered
       puts 'Please Select a person using the selection number for the person (number to the left of the name)'
-      @rentals.each_with_index do |rental, idx|
-        puts "Selection #{idx} - #{rental.person.name}"
+      @rentals.map(&:person).to_set.each_with_index do |person, idx|
+        puts "Selection #{idx} - #{person.name}"
       end
       selection = gets.chomp.to_i
       return @rentals[selection].person.id if selection.between?(0, max)
