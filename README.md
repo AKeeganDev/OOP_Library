@@ -6,12 +6,16 @@ In this project, we use knowlege of classes to write create our own Library simu
 
 This repository includes .rb (RUBY) files that can be used in IRB on the command line
 
-This procedure assumes you have Ruby installed.
+## Prerequisites
+This setup and run procedure assumes you have Ruby installed.
 
+## Setup
 1) Go to your terminal and navigate to where you store project repositories
-2) run the command `$git@github.com:AKeeganDev/OOP_Library.git`
-3) Type `$IRB` in your terminal to enter the Ruby shell
-4) Copy and paste the code from the Ruby files `person.rb, student.rb, teacher.rb` and see the results.
+2) Run the command `$git clone git@github.com:AKeeganDev/OOP_Library.git`
+
+## Run
+1) Navigate to the source folder in your terminal
+2) Run `@ruby main.rb` to run the program.
 
 ## Authors
 
